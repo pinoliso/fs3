@@ -1,9 +1,9 @@
 package com.duoc.controllers;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,9 +12,6 @@ import com.duoc.models.Book;
 import com.duoc.services.BookService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
-
-java.util.Optional;
 
 @RestController
 @RequestMapping("/api/books")
@@ -28,12 +25,12 @@ public class BookController {
     }
 
     @PostMapping
-    public String addBook(@RequestBody Book book) {
+    public Book addBook(@RequestBody Book book) {
         return bookService.addBook(book);
     }
 
     @GetMapping("/id")
-    public ResponseEntity<Book> getBook(@RequestParam Long id) {
+    public Optional<Book> getBook(@RequestParam Long id) {
         return bookService.getBook(id);
     }
     

@@ -1,11 +1,13 @@
 package com.duoc.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.duoc.repositories.BookRepository;
+import com.duoc.models.Book;
 
 @Service
 public class BookService {
@@ -14,18 +16,18 @@ public class BookService {
     private BookRepository bookRepository;
 
     public List<Book> getBooks() {
-        return bookRepository.getBooks();
+        return bookRepository.findAll();
     }
 
-    public Optional<Book> getBook(int id) {
-        return bookRepository.getBook(id);
+    public Optional<Book> getBook(Long id) {
+        return bookRepository.findById(id);
     }
 
     public Book addBook(Book book) {
-        return bookRepository.addBook(book);
+        return bookRepository.save(book);
     }
 
-    public void deleteBook(int id) {
-        bookRepository.deleteBook(id);
+    public void deleteBook(Long id) {
+        bookRepository.deleteById(id);
     }
 }
