@@ -1,4 +1,4 @@
-package com.duoc.services;
+package com.duoc.fs3.services;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,8 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.duoc.repositories.BookRepository;
-import com.duoc.models.Book;
+import com.duoc.fs3.models.Book;
+import com.duoc.fs3.repositories.BookRepository;
 
 @Service
 public class BookService {

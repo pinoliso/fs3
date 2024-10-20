@@ -1,4 +1,4 @@
-package com.duoc.models;
+package com.duoc.fs3.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
